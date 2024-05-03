@@ -1,0 +1,34 @@
+.infinite-slider {
+    overflow: hidden;
+    display: flex;
+    gap: 60px;
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%, black 15%, black 85%, rgba(0, 0, 0, 0.5) 95%, transparent 100%);
+}
+
+.infinite-slider .slides-container {
+    display: flex;
+    gap: 60px;
+}
+
+.infinite-slider .slides-container {
+    animation: slide 15s linear 0s infinite normal none running;
+}
+
+.infinite-slider img {
+    width: 143px;
+    height: 35px;
+}
+
+.infinite-slider:hover .slides-container {
+    animation-play-state: paused;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
