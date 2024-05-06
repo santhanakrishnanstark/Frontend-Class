@@ -21,3 +21,40 @@ header .btn-outline-secondary:hover {
     background-color: #CC0049;
     border-color: #CC0049;
 }
+
+/* Megamenu CSS */
+
+.mega-menu {
+    min-height: 300px;
+}
+
+.mega-menu-link:hover .mega-menu {
+    display: block;
+}
+
+.nav-item {
+    padding: 26px 0;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: 3px;
+    bottom: -18px;
+    background-color: #CC0049;
+}
+
+.nav-item:hover .nav-link::after {
+    display: inline-block;
+}
+
+.mega-menu {
+    top: 108px;
+}

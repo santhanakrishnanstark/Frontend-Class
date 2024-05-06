@@ -1,13 +1,16 @@
 .infinite-slider {
     overflow: hidden;
-    display: flex;
-    gap: 60px;
+    white-space: nowrap;
     mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 5%, black 15%, black 85%, rgba(0, 0, 0, 0.5) 95%, transparent 100%);
 }
 
 .infinite-slider .slides-container {
-    display: flex;
-    gap: 60px;
+    display: inline-block;
+}
+
+.infinite-slider .slide {
+    display: inline-block;
+    margin: 0 30px;
 }
 
 .infinite-slider .slides-container {
