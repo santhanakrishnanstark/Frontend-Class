@@ -1,0 +1,28 @@
+.carousel-card {
+    border-top: 3px solid rgb(22 120 251);
+    width: 350px;
+    margin: 0 10px;
+}
+
+.carousel-section h2,
+.carousel-card .card-header {
+    color: #314259;
+}
+
+.carousel-card .card-text {
+    color: #9092A3;
+}
+
+.carousel {
+    margin-top: 80px;
+}
+
+.carousel .slick-arrow {
+    position: absolute;
+    top: -50px;
+    right: 0;
+}
+
+.carousel .slick-arrow.slick-prev {
+    right: 80px;
+}
