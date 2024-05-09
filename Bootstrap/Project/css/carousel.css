@@ -19,10 +19,24 @@
 
 .carousel .slick-arrow {
     position: absolute;
-    top: -50px;
+    top: -85px;
     right: 0;
+
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+}
+
+.carousel .slick-arrow:hover {
+    background-color: rgb(22 120 251);
+    color: #fff;
 }
 
 .carousel .slick-arrow.slick-prev {
     right: 80px;
+}
+
+.carousel .slick-list {
+    padding: 0 10% 0 0 !important;
 }
