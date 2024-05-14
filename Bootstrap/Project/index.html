@@ -12,6 +12,9 @@
 
     <!-- Data Table -->
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css" />
+
+    <!-- Select2 plugin -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   
 
     <link rel="stylesheet" href="./css/index.css">
@@ -269,6 +272,15 @@
                 </tbody>
             </table>
         </section>
+
+        <section id="select2" class="container mt-5">
+            <h2>Select2 Plugin Usage</h2>
+
+            <select class="js-example-basic-single w-50" name="state">
+                <option value="AL1">Alabama 1</option>
+                <option value="WY1">Wyoming 1</option>
+              </select>
+        </section>
     </main>
 
 
@@ -308,6 +320,9 @@
 
     <!-- Data Table -->
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+
+    <!-- Select2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <!-- setup the slick carousel -->
     <script>
@@ -369,6 +384,37 @@
            
             $('#myTable').DataTable({
                 data: data
+            });
+
+            // Select2 plugin
+
+            $('.js-example-basic-single').select2({
+                placeholder: 'Select an option',
+                closeOnSelect: true,
+                dropdownCssClass: 'sk-select',
+                dropdownParent: $(document.getElementsByTagName('main')),
+                data: [
+                        {
+                            id: 0,
+                            text: 'enhancement'
+                        },
+                        {
+                            id: 1,
+                            text: 'bug'
+                        },
+                        {
+                            id: 2,
+                            text: 'duplicate'
+                        },
+                        {
+                            id: 3,
+                            text: 'invalid'
+                        },
+                        {
+                            id: 4,
+                            text: 'wontfix'
+                        }
+                    ],
             });
         });
     </script>
