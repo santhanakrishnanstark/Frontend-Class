@@ -1,0 +1,29 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: red;
+  margin: 0;
+  padding: 0;
+}
+body h1 {
+  color: white;
+}
+body img {
+  width: 20px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav.nav1 {
+  background-color: red;
+}
+nav.nav1 a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}/*# sourceMappingURL=index.css.map */

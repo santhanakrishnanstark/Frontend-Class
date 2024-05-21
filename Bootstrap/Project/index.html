@@ -15,11 +15,14 @@
 
     <!-- Select2 plugin -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    
   
 
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/slider.css">
     <link rel="stylesheet" href="./css/carousel.css">
+    <link rel="stylesheet" href="css/cardhighlight.css">
 
 </head>
 <body>
@@ -281,6 +284,97 @@
                 <option value="WY1">Wyoming 1</option>
               </select>
         </section>
+
+        <section id="card-highlight" class="container mt-5">
+            <div class="row">
+                <div class="col-8 d-flex justify-content-between flex-wrap gap-5">
+                    <div class="card active" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="card-link">Card link</a>
+                          <a href="#" class="card-link">Another link</a>
+                        </div>
+                        <div class="image">
+                            <img width="390" height="269" src="https://assets1.cleartax-cdn.com/cleartax/images/1605869731_desktop_fold_plugandplay_sme_cleargst.png" alt="">
+                        </div>
+                      </div>
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="card-link">Card link</a>
+                          <a href="#" class="card-link">Another link</a>
+                        </div>
+                        <div class="image">
+                            <img width="390" height="269" src="https://assets1.cleartax-cdn.com/cleartax/images/1605870820_desktop_fold_plugandplay_taxexperts_cleartds.png" alt="">
+                        </div>
+                      </div>
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="card-link">Card link</a>
+                          <a href="#" class="card-link">Another link</a>
+                        </div>
+                        <div class="image">
+                            <img width="390" height="269" src="https://assets1.cleartax-cdn.com/cleartax/images/1605870742_desktop_fold_plugandplay_taxexperts_cleartaxcloud.png" alt="">
+                        </div>
+                      </div>
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="card-link">Card link</a>
+                          <a href="#" class="card-link">Another link</a>
+                        </div>
+                        <div class="image">
+                            <img width="200" height="" src="https://assets1.cleartax-cdn.com/cleartax/images/1613564438_mobilemock.png" alt="">
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </section>
+
+        <section>
+            <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading1">First</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading2">Second</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                <h4 id="scrollspyHeading1">First heading</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading2">Second heading</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading3">Third heading</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading4">Fourth heading</h4>
+                <p>...</p>
+                <h4 id="scrollspyHeading5">Fifth heading</h4>
+                <p>...</p>
+              </div>
+        </section>
     </main>
 
 
@@ -415,6 +509,16 @@
                             text: 'wontfix'
                         }
                     ],
+            });
+
+
+
+            // Card highlight - hover((success) , (fail))
+            $('.card').hover(function(){
+                $('.card').removeClass('active');
+                $(this).addClass('active');
+            }, function(){
+                // $(this).removeClass('active');
             });
         });
     </script>

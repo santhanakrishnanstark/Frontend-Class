@@ -1,0 +1,29 @@
+#card-highlight {
+    position: relative;
+}
+
+#card-highlight .card {
+    position: static;
+}
+
+#card-highlight .image {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 400px;
+    height: 350px;
+    background: #fff;
+    text-align: center;
+    /* transform: scale(0.6); */
+    transition: all 500ms linear;
+    opacity: 0;
+}
+
+#card-highlight .card.active .image {
+    /* transform: scale(1); */
+    /* transform-origin: center; */
+    /* z-index: 1; */
+
+    opacity: 1;
+}
