@@ -1,0 +1,115 @@
+@charset 'utf-8';
+
+body {
+    margin: 0;
+
+    a {
+        text-decoration: 'none';
+    }
+
+    ul {
+        padding: 0;
+    }
+}
+
+// Variables
+$primary-color: cornflowerblue;
+
+// Functions
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+  }
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+
+header {
+   background-color: tint(#f00, 50);
+}
+
+button {
+    background-color: $primary-color;
+
+    &:hover {
+        background-color: shade($primary-color, 50);
+    }
+
+    &:disabled {
+        background-color: tint($primary-color, 50);
+    }
+}
+
+
+// Variable
+$shadows: (0 42px 13.37px hotpink);
+$shadow: 10px;
+
+// Yep
+$shadows: append($shadows, $shadow);
+
+@debug $shadows;
+
+
+// List 
+
+
+// Yep
+$font-stack: (
+  'Helvetica',
+  'Arial',
+  sans-serif,
+);
+
+@debug nth($font-stack, 3);
+@debug nth(10px 12px 16px, 1);
+
+
+// Example of SASS List
+
+$sizes: 4, 5, 8;
+
+@each $size in $sizes {
+  .icon-#{$size} {
+    font-size: #{$size}0px;
+    height: #{$size}0px;
+    width: #{$size}0px;
+  }
+}
+
+
+// SASS Map 
+
+// Yep
+$breakpoints: (
+  'small': 767px,
+  'medium': 992px,
+  'large': 1200px,
+);
+
+
+.container {
+    max-width: map-get($breakpoints, "medium");
+}
+// @debug map.get($breakpoints, "medium");
+
+// $font-weights: ("regular": 400, "medium": 500, "bold": 700);
+
+// @debug map.get($font-weights, "medium");
+
+// $config: (a: (b: (c: d)));
+// @debug map.get($config, a, b, c);

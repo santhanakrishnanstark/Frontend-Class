@@ -1,0 +1,14 @@
+{
+  "name": "sass-development",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": { 
+    "sass": "node-sass sass/index.scss css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

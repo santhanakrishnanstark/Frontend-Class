@@ -1,0 +1,9 @@
+// SASS Variable
+
+@use "reset";
+@import "variables";
+
+
+body {
+    color: $primaryColor;
+}
