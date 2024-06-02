@@ -1,34 +1,233 @@
+/** Buttons */
+.button {
+  display: block;
+  padding: 1rem;
+  color: cornflowerblue;
+  /** Inlined buttons on large screens */
+}
+
+/** Icons within buttons */
+.button>svg {
+  fill: currentcolor;
+}
+
+/** Inline button */
+.button--inline {
+  display: inline-block;
+}
+
 body {
-  margin: 0; }
-  body a {
-    text-decoration: 'none'; }
-  body ul {
-    padding: 0; }
+  margin: 0;
+}
+
+body a {
+  text-decoration: 'none';
+}
+
+body ul {
+  padding: 0;
+}
 
 header {
-  background-color: #ff8080; }
+  background-color: #ff8080;
+}
 
 button {
-  background-color: cornflowerblue; }
-  button:hover {
-    background-color: #324b77; }
-  button:disabled {
-    background-color: #b2caf6; }
+  background-color: cornflowerblue;
+}
+
+button:hover {
+  background-color: #324b77;
+}
+
+button:disabled {
+  background-color: #b2caf6;
+}
 
 .icon-4 {
   font-size: 40px;
   height: 40px;
-  width: 40px; }
+  width: 40px;
+}
 
 .icon-5 {
   font-size: 50px;
   height: 50px;
-  width: 50px; }
+  width: 50px;
+}
 
 .icon-8 {
   font-size: 80px;
   height: 80px;
-  width: 80px; }
+  width: 80px;
+}
 
 .container {
-  max-width: 992px; }
+  max-width: 992px;
+}
+
+.carousel {
+  margin-top: 80px;
+}
+
+.carousel-card {
+  border-top: 3px solid cornflowerblue;
+}
+
+.carousel.is-active {
+  color: red;
+}
+
+.carousel:hover {
+  background-color: blue;
+}
+
+.carousel::before {
+  content: 'pseudo-element';
+}
+
+.no-opacity .carousel {
+  display: none;
+}
+
+.no-opacity .foo {
+  display: none;
+}
+
+/** 
+  variables;
+  functions;
+  mixins.
+**/
+.sd-fs-1 {
+  font-size: 30px;
+}
+
+.fs-1 {
+  font-size: 32px;
+}
+
+/** Helper class to truncate and add ellipsis to a string too long for it to fit on a single line. 1. Prevent content from wrapping, forcing it on a single line. 2. Add ellipsis at the end of the line. */
+.ellipsis {
+  white-space: nowrap;
+  /* 1 */
+  text-overflow: ellipsis;
+  /* 2 */
+  overflow: hidden;
+}
+
+.foo {
+  color: red;
+}
+
+@media (min-width: 800px) {
+  .foo {
+    color: blue;
+  }
+}
+
+/*** 
+  @mixin
+  @function
+  %{placeholder}
+*/
+.button {
+  display: inline-block;
+}
+
+.modal>.button {
+  display: block;
+}
+
+.border,
+.button {
+  border: 1px solid #aaa;
+}
+
+.primary-btn,
+.button {
+  background-color: purple;
+  color: #fff;
+}
+
+@media (min-width: 20em) {
+  .foo {
+    color: red;
+  }
+}
+
+@media (min-width: 30em) {
+  .bar {
+    background: yellow;
+  }
+}
+
+.testing {
+  width: "100%";
+}
+
+.font-1 {
+  font-size: 60px;
+}
+
+.font-2 {
+  font-size: 50px;
+}
+
+.font-3 {
+  font-size: 40px;
+}
+
+.font-4 {
+  font-size: 30px;
+}
+
+.font-5 {
+  font-size: 20px;
+}
+
+.font-6 {
+  font-size: 10px;
+}
+
+.foo:nth-of-type(1) {
+  border-color: #bf8c40;
+}
+
+.foo:nth-of-type(2) {
+  border-color: #a6bf40;
+}
+
+.foo:nth-of-type(3) {
+  border-color: #59bf40;
+}
+
+.foo:nth-of-type(4) {
+  border-color: #40bf73;
+}
+
+.foo:nth-of-type(5) {
+  font-size: 20px;
+  font-weight: bold;
+  border-color: #40bfbf;
+}
+
+.foo:nth-of-type(6) {
+  border-color: #4073bf;
+}
+
+.foo:nth-of-type(7) {
+  border-color: #5940bf;
+}
+
+.foo:nth-of-type(8) {
+  border-color: #a640bf;
+}
+
+.foo:nth-of-type(9) {
+  border-color: #bf408c;
+}
+
+.foo:nth-of-type(10) {
+  border-color: #bf4040;
+}

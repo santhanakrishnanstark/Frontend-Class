@@ -1,15 +1,17 @@
 @charset 'utf-8';
 
+@import "./components/button";
+
 body {
-    margin: 0;
+  margin: 0;
 
-    a {
-        text-decoration: 'none';
-    }
+  a {
+    text-decoration: 'none';
+  }
 
-    ul {
-        padding: 0;
-    }
+  ul {
+    padding: 0;
+  }
 }
 
 // Variables
@@ -24,8 +26,8 @@ $primary-color: cornflowerblue;
 /// @return {Color}
 
 @function tint($color, $percentage) {
-    @return mix(white, $color, $percentage);
-  }
+  @return mix(white, $color, $percentage);
+}
 
 /// Slightly darken a color
 /// @access public
@@ -34,24 +36,24 @@ $primary-color: cornflowerblue;
 /// @return {Color}
 
 @function shade($color, $percentage) {
-    @return mix(black, $color, $percentage);
+  @return mix(black, $color, $percentage);
 }
 
 
 header {
-   background-color: tint(#f00, 50);
+  background-color: tint(#f00, 50);
 }
 
 button {
-    background-color: $primary-color;
+  background-color: $primary-color;
 
-    &:hover {
-        background-color: shade($primary-color, 50);
-    }
+  &:hover {
+    background-color: shade($primary-color, 50);
+  }
 
-    &:disabled {
-        background-color: tint($primary-color, 50);
-    }
+  &:disabled {
+    background-color: tint($primary-color, 50);
+  }
 }
 
 
@@ -69,11 +71,7 @@ $shadows: append($shadows, $shadow);
 
 
 // Yep
-$font-stack: (
-  'Helvetica',
-  'Arial',
-  sans-serif,
-);
+$font-stack: ('Helvetica', 'Arial', sans-serif);
 
 @debug nth($font-stack, 3);
 @debug nth(10px 12px 16px, 1);
@@ -81,7 +79,9 @@ $font-stack: (
 
 // Example of SASS List
 
-$sizes: 4, 5, 8;
+$sizes: 4,
+5,
+8;
 
 @each $size in $sizes {
   .icon-#{$size} {
@@ -95,17 +95,18 @@ $sizes: 4, 5, 8;
 // SASS Map 
 
 // Yep
-$breakpoints: (
-  'small': 767px,
+$breakpointList: ('small': 767px,
   'medium': 992px,
   'large': 1200px,
 );
 
 
+
 .container {
-    max-width: map-get($breakpoints, "medium");
+  max-width: map-get($breakpointList, "medium");
 }
-// @debug map.get($breakpoints, "medium");
+
+// @debug map.get($breakpointList, "medium");
 
 // $font-weights: ("regular": 400, "medium": 500, "bold": 700);
 
@@ -113,3 +114,249 @@ $breakpoints: (
 
 // $config: (a: (b: (c: d)));
 // @debug map.get($config, a, b, c);
+
+
+// Selector Nesting
+
+.carousel {
+  margin-top: 80px;
+
+  &-card {
+    border-top: 3px solid cornflowerblue;
+  }
+
+  &.is-active {
+    color: red;
+  }
+
+  &:hover {
+    background-color: blue;
+  }
+
+  &::before {
+    content: 'pseudo-element';
+  }
+
+  // To add the display:none based on parent class 'no-opacity'
+  .no-opacity & {
+    display: none;
+  }
+}
+
+
+.foo {
+
+  .no-opacity & {
+    display: none;
+  }
+}
+
+
+// Naming Conventions
+
+
+/** 
+  variables;
+  functions;
+  mixins.
+**/
+
+$primary-background-color: purple;
+
+$CSS_POSITIONS: (top, right, bottom, left, center);
+
+@mixin size($width, $height: $width) {
+  // …
+}
+
+@function opposite-direction($direction) {
+  // …
+
+  // return ""
+}
+
+.sd-fs-1 {
+  font-size: 30px;
+}
+
+.fs-1 {
+  font-size: 32px;
+}
+
+
+/**
+ * Helper class to truncate and add ellipsis to a string too long for it to fit
+ * on a single line.
+ * 1. Prevent content from wrapping, forcing it on a single line.
+ * 2. Add ellipsis at the end of the line.
+ */
+.ellipsis {
+  white-space: nowrap;
+  /* 1 */
+  text-overflow: ellipsis;
+  /* 2 */
+  overflow: hidden;
+}
+
+// Add current module to the list of imported modules.
+// `!global` flag is required so it actually updates the global variable.
+$imported-modules: 'module';
+
+// Responsive
+
+// Step 1: creating breakpoints
+$breakpoints: ('medium': (min-width: 800px),
+  'large': (min-width: 1000px),
+  'huge': (min-width: 1200px),
+);
+
+// Step 2: creating mixins for breakpoints
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(type-of($raw-query)=='string',
+        unquote($raw-query),
+        inspect($raw-query));
+
+    @media #{$query} {
+      @content;
+    }
+  }
+
+  @else {
+    @error 'No value found for `#{$breakpoint}`. '
+    +'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+// Step3: Utlizing the above mixins
+
+.foo {
+  color: red;
+
+  @include respond-to('medium') {
+    color: blue;
+  }
+}
+
+// @extend directive usage 
+
+/*** 
+  @mixin
+  @function
+  %{placeholder}
+*/
+
+%button {
+  display: inline-block;
+  // … button styles
+
+  // Relationship: a %button that is a child of a %modal
+  %modal>& {
+    display: block;
+  }
+}
+
+.border {
+  border: 1px solid #aaa;
+}
+
+.primary-btn {
+  background-color: purple;
+  color: #fff;
+}
+
+.button {
+  @extend %button;
+  @extend .primary-btn;
+  @extend .border;
+}
+
+// Yep
+.modal {
+  @extend %modal;
+}
+
+// Extends with Media query
+
+%foo {
+  @media (min-width: 20em) {
+    color: red;
+  }
+}
+
+@media (min-width: 30em) {
+  %bar {
+    background: yellow;
+  }
+}
+
+// usage
+.foo {
+  @extend %foo;
+}
+
+.bar {
+  @extend %bar;
+}
+
+
+// Conditional Statment
+
+
+$value: 1rem;
+$test2: 16px;
+$test: 10px;
+
+@function multiply-px($value1, $value2) {
+  @if (($value1 * $value2 / 1px)==16rem) {
+    @return "100%";
+  }
+
+  @else {
+    @return false;
+  }
+}
+
+.testing {
+  width: multiply-px($test2, $value);
+}
+
+// Loop
+
+$fontMap: ('1': 60px,
+  '2': 50px,
+  '3': 40px,
+  '4': 30px,
+  '5': 20px,
+  '6': 10px);
+
+@each $key,
+$value in $fontMap {
+  .font-#{$key} {
+    font-size: $value;
+  }
+}
+
+// For Loop
+$testing: 12;
+
+@for $i from 1 through 10 {
+  .foo:nth-of-type(#{$i}) {
+
+    @if $i==5 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    border-color: hsl($i * 36, 50%, 50%);
+  }
+}
+
+@warn "Need to check this code";
+// @error "Invalid css props"
