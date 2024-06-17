@@ -1,0 +1,38 @@
+button {
+
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 1.2857;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    padding: toRem(12) toRem(16);
+    font-family: $fontPrimary;
+
+
+    &:hover {}
+
+    &:focus {}
+
+    &:active {}
+
+    &.primary {
+        background-color: $primaryColor;
+        color: $colorWhite;
+
+        &:hover {
+            background-color: toDarken($primaryColor, 30%);
+        }
+
+        &:focus {}
+
+        &:active {}
+    }
+
+    &.secondary {}
+
+    &.btn-link {}
+
+}

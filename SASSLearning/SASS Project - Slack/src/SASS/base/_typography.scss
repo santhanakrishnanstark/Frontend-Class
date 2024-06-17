@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../assets/fonts/Nunito-ExtraLight.woff2') format('woff2'),
+        url('../assets/fonts/Nunito-ExtraLight.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body {
+    font-size: $rootFontsize+px;
+}
+
+body {
+    font-family: $fontPrimary;
+}
+
+h1 {
+    font-size: toRem(36);
+    font-weight: bold;
+}
+
+h2 {
+    font-size: toRem(32);
+    font-weight: bold;
+}
+
+// Font classes
+
+.header1 {
+    font-size: toRem(50);
+}
+
+.header2 {
+    @extend h2;
+}
+
+.headline {
+    @extend .header1;
+}

@@ -1,0 +1,19 @@
+@use 'sass:math';
+
+// convert from px to rem
+
+@function toRem($value) {
+    $remValue: math.div($value, $rootFontsize) + rem;
+
+    @return $remValue;
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+
+@function toDarken($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}

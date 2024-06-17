@@ -1,0 +1,17 @@
+// Flex properties
+
+@mixin useFlex($alignItem: false, $justifyContent: false, $gap: false) {
+    display: flex;
+
+    @if $alignItem {
+        align-items: $alignItem;
+    }
+
+    @if $justifyContent {
+        justify-content: $justifyContent;
+    }
+
+    @if $gap {
+        gap: $gap;
+    }
+}

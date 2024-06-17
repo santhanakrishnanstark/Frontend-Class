@@ -1,0 +1,15 @@
+{
+  "name": "slack-clone",
+  "version": "1.0.0",
+  "description": "A Slack web app clone",
+  "main": "index.js",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded src/SASS/main.scss:src/CSS/index.css",
+    "sass-prod": "sass --no-source-map --style=compressed src/SASS/main.scss:src/CSS/index.css"
+  },
+  "author": "sandy",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.4"
+  }
+}

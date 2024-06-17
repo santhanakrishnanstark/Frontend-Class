@@ -1,0 +1,54 @@
+// 
+// Header
+// nav parent label is 14px 
+// nav title is 15px
+// nav link is 14px
+
+
+// Footer
+// nav title is 14px
+// nav link is 16px
+
+header {
+    .nav {
+        @include useFlex(center);
+
+        ul {
+            @include useFlex(center);
+        }
+
+        li {
+            padding: toRem(4) toRem(12);
+        }
+
+        &-parent-label-root {
+            font-size: toRem(15);
+            font-weight: 600;
+            padding-right: toRem(16);
+
+            &::after {
+                content: '🢐';
+                display: inline-block;
+            }
+        }
+
+        &-parent-label:not(.nav-parent-label-root) {
+            font-size: toRem(14);
+            text-transform: uppercase;
+            font-weight: 600;
+            padding-bottom: toRem(16);
+        }
+
+        &-title {
+            font-size: toRem(15);
+        }
+
+        &-link {
+            font-size: toRem(14);
+            color: $textGray;
+        }
+    }
+}
+
+
+footer {}
