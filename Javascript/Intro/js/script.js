@@ -1,4 +1,4 @@
-// Object
+// Object - combines with behaviour and characteristic/property
 
 let person = {
     name: 'John',
