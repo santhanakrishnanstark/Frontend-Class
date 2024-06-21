@@ -115,3 +115,30 @@ function createHTMLElement(elName, className, text) {
       </button>
  * 
  */
+
+
+// Adding image tag
+
+const imageContainer = document.querySelector(".image-container");
+
+const imageEl = document.createElement("img");
+imageEl.src = "https://cdn.pixabay.com/photo/2023/08/08/10/50/hot-wheels-8177051_1280.jpg";
+imageEl.alt = "car";
+
+// Styling
+
+// Option 1
+imageEl.setAttribute("style", "border: 5px solid red; box-shadow: 0 0 5px 10px #000");
+
+// Option 2
+imageEl.style.border = "10px dashed green";
+
+// Option 3 - Recommended
+imageEl.setAttribute("class", "car-image");
+imageEl.classList.add("car");
+imageEl.classList.add("pixabay-image");
+imageEl.classList.remove("car");
+
+console.log('Image Element Class list: ', imageEl.classList)
+
+imageContainer.appendChild(imageEl);
