@@ -24,3 +24,48 @@ button:disabled {
     color: #aaa;
     cursor: not-allowed;
 }
+
+
+/* Ball Object */
+
+:root {
+    --ballX: 0px;
+    --ballY: 0px;
+    --cursorX: 0px;
+    --cursorY: 0px;
+}
+
+body {
+    height: 100vh;
+}
+
+.ball {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: translate(calc(var(--ballX) - 40%), calc(var(--ballY) - 40%));
+}
+
+/* Custom Cursor */
+
+#cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 30px;
+    height: 30px;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+    display: inline-block;
+
+    transform: translate(calc(var(--cursorX) - 40%), calc(var(--cursorY) - 40%));
+    transition: all 200ms linear;
+}
