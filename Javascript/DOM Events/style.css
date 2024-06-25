@@ -68,4 +68,5 @@ body {
 
     transform: translate(calc(var(--cursorX) - 40%), calc(var(--cursorY) - 40%));
     transition: all 200ms linear;
+    pointer-events: none;
 }
