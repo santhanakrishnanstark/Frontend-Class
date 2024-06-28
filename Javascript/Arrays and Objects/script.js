@@ -110,3 +110,42 @@ const filteredSquareNumber = squareNumbers.filter((item, index) => {
 console.log('filteredSquareNumber : ', filteredSquareNumber)
 
 // 4. Reduce()
+
+
+// Task - solution
+
+const itemInput = document.getElementById("itemInput");
+const addBtn = document.getElementById("addBtn");
+const shoppingList = [];
+
+addBtn.addEventListener("click", () => {
+
+    // step1: getting input value
+    const itemValue = itemInput.value;
+
+    // step2: if value present, store the input value to shopping list
+    if (itemValue) {
+        shoppingList.push(itemValue);
+
+        // step4: show the shopping list array
+        console.log("Item added ", shoppingList);
+
+        // step5: clear the inputfield
+        itemInput.value = "";
+
+        // step6: Add the itemValue into Unorder list in the UI
+        // create li tag and add the itemValue text to li tag 
+
+
+        // step7: append the li tag to ul tag
+
+
+
+    }
+
+    // step3: if no value, then show message to add the item
+    else {
+        alert("Enter any value");
+    }
+
+});
