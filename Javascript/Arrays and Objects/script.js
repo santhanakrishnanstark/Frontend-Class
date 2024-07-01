@@ -117,6 +117,7 @@ console.log('filteredSquareNumber : ', filteredSquareNumber)
 const itemInput = document.getElementById("itemInput");
 const addBtn = document.getElementById("addBtn");
 const shoppingList = [];
+const shoppingListEl = document.getElementById("shoppingList");
 
 addBtn.addEventListener("click", () => {
 
@@ -136,9 +137,36 @@ addBtn.addEventListener("click", () => {
         // step6: Add the itemValue into Unorder list in the UI
         // create li tag and add the itemValue text to li tag 
 
+        // step 6.1 : Create Li tag
+        const liTag = document.createElement("li");
 
-        // step7: append the li tag to ul tag
+        // step 6.2 : add the text content into Li tag and other properties
+        liTag.textContent = itemValue;
+        liTag.id = `item-${shoppingList.length}`;
+        liTag.className = "list-item";
 
+        // step 6.3 : Create Delete Button tag
+        const deleteBtn = document.createElement("button");
+
+        // step 6.4: add text content "Delete" to button tag
+        deleteBtn.textContent = "Delete";
+        deleteBtn.style.backgroundColor = randomColorGenerator();
+
+        // step 6.4.1 : Adding event listener to the button
+        deleteBtn.addEventListener("click", (event) => {
+            const clickedDeleteBtn = event.target;
+
+            clickedDeleteBtn.remove();
+
+            // To access parent element from target => event.target.parentElement
+
+        });
+
+        // step 6.5: Add the delete button into Li tag
+        liTag.appendChild(deleteBtn);
+
+        // step 6.6: Add the Li tag into ShoppingList UL
+        shoppingListEl.appendChild(liTag);
 
 
     }
@@ -149,3 +177,11 @@ addBtn.addEventListener("click", () => {
     }
 
 });
+
+
+// random color generator
+
+const randomColorGenerator = () => {
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    return `#${randomColor}`;
+}
