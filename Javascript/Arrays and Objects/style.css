@@ -1,0 +1,22 @@
+#shoppingList {
+    width: 300px;
+    padding: 20px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+#shoppingList .list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+#shoppingList .list-item button {
+    border: none;
+    padding: 10px 30px;
+    font-size: 18px;
+}
