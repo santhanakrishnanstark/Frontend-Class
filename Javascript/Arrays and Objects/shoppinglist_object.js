@@ -12,7 +12,20 @@ const shoppingListEl = document.getElementById("shoppingList");
 // document.getElementsByTagName("body")[0].appendChild(myButton);
 
 addBtn.addEventListener("click", () => {
+    saveThisItem();
+});
 
+// itemInput.addEventListener("keydown", (e) => console.log(e.target.value));
+
+// itemInput.addEventListener("keypress", (e) => console.log(e.target.value));
+
+itemInput.addEventListener("keyup", (e) => {
+    if (e.code == 'Enter') {
+        saveThisItem();
+    }
+});
+
+function saveThisItem() {
     const item = itemInput.value;
 
     // Validate input value
@@ -27,13 +40,7 @@ addBtn.addEventListener("click", () => {
     } else {
         alert("Enter any value");
     }
-
-});
-
-
-
-
-
+}
 
 function checkInputValue(itemValue) {
     return itemValue ? true : false
@@ -60,14 +67,16 @@ function renderListItem(newItem) {
         const clickedDeleteBtn = event.target;
         clickedDeleteBtn.parentElement.remove();
 
-        // updateShoppingList();
+        const itemIndex = event.target.parentElement.id.split('-')[1];
+
+        updateShoppingList('DELETE', itemIndex);
     });
 
     checkbox.addEventListener("change", (event) => {
-        console.log('*** Checkbox: ', event.target.checked);
-        // is checkbox selected:  console.log(" pen is bought ");
+        const isBought = event.target.checked;
+        const itemIndex = event.target.id.split('-')[1];
 
-        // updateShoppingList();
+        updateShoppingList('UPDATE', itemIndex, isBought);
     });
 
     liTag.appendChild(checkbox);
@@ -75,11 +84,21 @@ function renderListItem(newItem) {
     shoppingListEl.appendChild(liTag);
 }
 
+function updateShoppingList(type, itemIndex, isBought) {
+    if (type === "UPDATE") {
+        shoppingList[itemIndex].isBought = isBought;
+    }
+    if (type === "DELETE") {
+        shoppingList.splice(itemIndex, 1);
+    }
+
+    console.log('Shopping list is Updated! ', shoppingList);
+}
 
 function createListItem(newItem) {
     const liTag = document.createElement("li");
     liTag.textContent = newItem.name;
-    liTag.id = `item-${shoppingList.length}`;
+    liTag.id = `item-${shoppingList.length - 1}`;
     liTag.className = "list-item";
 
     return liTag;
@@ -89,8 +108,9 @@ function createCheckbox(newItem) {
     const input = document.createElement("input");
     input.type = "checkbox";
     input.checked = newItem.isBought;
-    input.id = "item-" + shoppingList.length;
-    input.name = "item-" + shoppingList.length;
+    console.log('checkbox: ', shoppingList.length - 1)
+    input.id = `item-${shoppingList.length - 1}`;
+    input.name = `item-${shoppingList.length - 1}`;
 
     return input;
 }
