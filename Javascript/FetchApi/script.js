@@ -38,3 +38,59 @@ function renderUI(data) {
         document.querySelector('.container').appendChild(imgEl);
     });
 }
+
+// 3. Jsonplaceholder - using async/await
+
+const POST_URL = 'https://jsonplaceholder.typicode.com/posts';
+
+// fetch(POST_URL)
+//     .then(response => response.json())
+//     .then(json => {
+//         console.log(json)
+//     });
+
+runPostUI();
+
+
+async function runPostUI() {
+    try {
+        // need data
+        const postData = await getPostData(POST_URL);
+
+        throw new Error("Something Changed!!!");
+
+        // render UI
+
+        renderPostUI(postData);
+    } catch (error) {
+        console.error('Error Came: ', error);
+
+        // render fallback UI
+        const pTag = document.createElement("p");
+        pTag.textContent = "Network Error / No Data Available";
+        document.getElementById("posts").appendChild(pTag);
+    }
+}
+
+
+async function getPostData(URL) {
+    const response = await fetch(URL);
+    const postData = await response.json();
+
+    return postData;
+}
+
+function renderPostUI(postData) {
+    postData.forEach((post, index) => {
+        const liTag = document.createElement("li");
+        const h3Tag = document.createElement("h3");
+        const pTag = document.createElement("p");
+
+        h3Tag.textContent = post.title;
+        pTag.textContent = post.body;
+
+        liTag.appendChild(h3Tag);
+        liTag.appendChild(pTag);
+        document.getElementById("posts").appendChild(liTag);
+    });
+}
