@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia-like Page with Scroll Listener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            position: fixed;
+            top: 60px;
+            right: 0;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-left: 1px solid #ddd;
+            height: 100%;
+            width: 200px;
+            overflow-y: auto;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-bottom: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        nav ul li a.active {
+            font-weight: bold;
+            color: blue;
+        }
+        main {
+            margin: 80px 220px 20px 20px;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        section h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sample Wikipedia-like Page</h1>
+</header>
+
+<nav>
+    <h2>Contents</h2>
+    <ul id="toc">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#structure">Structure</a></li>
+        <li><a href="#content">Content</a></li>
+        <li><a href="#references">References</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia est vel nisl tempor, non fermentum massa pellentesque. Integer auctor libero et vehicula suscipit.</p>
+    </section>
+
+    <section id="history">
+        <h2>History</h2>
+        <p>Proin sit amet venenatis sapien. Nulla facilisi. Curabitur vel enim nec risus gravida scelerisque. Nam sed vehicula eros.</p>
+    </section>
+
+    <section id="structure">
+        <h2>Structure</h2>
+        <p>Suspendisse eget enim nec nisi ultrices elementum. Nam convallis, augue at malesuada fringilla, ligula mi facilisis velit, et ultricies lorem lectus ut arcu.</p>
+    </section>
+
+    <section id="content">
+        <h2>Content</h2>
+        <p>Ut non tortor ut mi vestibulum convallis. Cras vestibulum nulla at nisi viverra, et porttitor arcu pharetra. Nullam non erat vel libero consequat ultricies.</p>
+    </section>
+
+    <section id="references">
+        <h2>References</h2>
+        <p>Vivamus facilisis lorem vel nisl tempor, non luctus nunc aliquam. Sed a dolor arcu. Fusce et malesuada massa. Donec blandit, arcu in aliquet blandit, velit nisi vehicula arcu, nec tempor arcu odio sit amet orci.</p>
+    </section>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('main section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        function onScroll() {
+            let scrollPos = window.scrollY + 100; // Adjust the offset to highlight correctly
+            sections.forEach((section) => {
+                if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+                    navLinks.forEach((link) => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === section.getAttribute('id')) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', onScroll);
+    });
+</script>
+
+</body>
+</html>

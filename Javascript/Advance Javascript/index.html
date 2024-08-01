@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Javascript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-left: 1px solid #ddd;
+            height: 100%;
+            width: 200px;
+            overflow-y: auto;
+        }
+        main {
+            margin-right: 220px;
+            padding: 20px;
+            height: calc(100vh - 160px);
+            overflow-y: scroll;
+            padding-bottom: 100px;
+        }
+        section {
+            margin-bottom: 20px;
+            height: 50vh;
+            padding: 50px 0;
+        }
+        section h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .animate {
+            animation: highlight 1s linear forwards;
+        }
+        @keyframes highlight {
+            to {
+                background-color: yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sample Wikipedia-like Page</h1>
+</header>
+
+<nav>
+    <h2>Contents</h2>
+    <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#structure">Structure</a></li>
+        <li><a href="#content">Content</a></li>
+        <li><a href="#references">References</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia est vel nisl tempor, non fermentum massa pellentesque. Integer auctor libero et vehicula suscipit.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore culpa, enim distinctio dolorum omnis dolor. Libero dolorem repellat, adipisci itaque, distinctio illum vel, atque placeat similique asperiores architecto fugiat ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolorem at, iusto vel tempore minima. Quae nostrum soluta voluptatem, illum porro dolorum, minus odio neque quos ad recusandae quidem dignissimos!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae temporibus architecto laborum error maiores dicta at tempora magnam a voluptatem, eligendi earum, enim quia eveniet nobis voluptates, eum obcaecati neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, officia! Fuga, eius quasi explicabo, eos neque accusantium ab labore recusandae quis quo doloremque? Fuga reprehenderit repellat cumque quod beatae atque!</p>
+    </section>
+
+    <section id="history">
+        <h2>History</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia est vel nisl tempor, non fermentum massa pellentesque. Integer auctor libero et vehicula suscipit.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore culpa, enim distinctio dolorum omnis dolor. Libero dolorem repellat, adipisci itaque, distinctio illum vel, atque placeat similique asperiores architecto fugiat ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolorem at, iusto vel tempore minima. Quae nostrum soluta voluptatem, illum porro dolorum, minus odio neque quos ad recusandae quidem dignissimos!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae temporibus architecto laborum error maiores dicta at tempora magnam a voluptatem, eligendi earum, enim quia eveniet nobis voluptates, eum obcaecati neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, officia! Fuga, eius quasi explicabo, eos neque accusantium ab labore recusandae quis quo doloremque? Fuga reprehenderit repellat cumque quod beatae atque!</p>
+        <p>Proin sit amet venenatis sapien. Nulla facilisi. Curabitur vel enim nec risus gravida scelerisque. Nam sed vehicula eros.</p>
+    </section>
+
+    <section id="structure">
+        <h2>Structure</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia est vel nisl tempor, non fermentum massa pellentesque. Integer auctor libero et vehicula suscipit.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore culpa, enim distinctio dolorum omnis dolor. Libero dolorem repellat, adipisci itaque, distinctio illum vel, atque placeat similique asperiores architecto fugiat ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolorem at, iusto vel tempore minima. Quae nostrum soluta voluptatem, illum porro dolorum, minus odio neque quos ad recusandae quidem dignissimos!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae temporibus architecto laborum error maiores dicta at tempora magnam a voluptatem, eligendi earum, enim quia eveniet nobis voluptates, eum obcaecati neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, officia! Fuga, eius quasi explicabo, eos neque accusantium ab labore recusandae quis quo doloremque? Fuga reprehenderit repellat cumque quod beatae atque!</p>
+        <p>Suspendisse eget enim nec nisi ultrices elementum. Nam convallis, augue at malesuada fringilla, ligula mi facilisis velit, et ultricies lorem lectus ut arcu.</p>
+    </section>
+
+    <section id="content">
+        <h2>Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia est vel nisl tempor, non fermentum massa pellentesque. Integer auctor libero et vehicula suscipit.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore culpa, enim distinctio dolorum omnis dolor. Libero dolorem repellat, adipisci itaque, distinctio illum vel, atque placeat similique asperiores architecto fugiat ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolorem at, iusto vel tempore minima. Quae nostrum soluta voluptatem, illum porro dolorum, minus odio neque quos ad recusandae quidem dignissimos!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae temporibus architecto laborum error maiores dicta at tempora magnam a voluptatem, eligendi earum, enim quia eveniet nobis voluptates, eum obcaecati neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, officia! Fuga, eius quasi explicabo, eos neque accusantium ab labore recusandae quis quo doloremque? Fuga reprehenderit repellat cumque quod beatae atque!</p>
+        <p>Ut non tortor ut mi vestibulum convallis. Cras vestibulum nulla at nisi viverra, et porttitor arcu pharetra. Nullam non erat vel libero consequat ultricies.</p>
+    </section>
+
+    <section id="references">
+        <h2>References</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia est vel nisl tempor, non fermentum massa pellentesque. Integer auctor libero et vehicula suscipit.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore culpa, enim distinctio dolorum omnis dolor. Libero dolorem repellat, adipisci itaque, distinctio illum vel, atque placeat similique asperiores architecto fugiat ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolorem at, iusto vel tempore minima. Quae nostrum soluta voluptatem, illum porro dolorum, minus odio neque quos ad recusandae quidem dignissimos!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae temporibus architecto laborum error maiores dicta at tempora magnam a voluptatem, eligendi earum, enim quia eveniet nobis voluptates, eum obcaecati neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, officia! Fuga, eius quasi explicabo, eos neque accusantium ab labore recusandae quis quo doloremque? Fuga reprehenderit repellat cumque quod beatae atque!</p>
+        <p>Vivamus facilisis lorem vel nisl tempor, non luctus nunc aliquam. Sed a dolor arcu. Fusce et malesuada massa. Donec blandit, arcu in aliquet blandit, velit nisi vehicula arcu, nec tempor arcu odio sit amet orci.</p>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

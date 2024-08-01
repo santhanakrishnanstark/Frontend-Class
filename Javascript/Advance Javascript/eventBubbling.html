@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+
+    <style>
+         ul {
+            list-style: none;
+            padding: 0;
+            width: 300px;
+        }
+        li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        li button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div>
+                <button>Click me!</button>
+            </div>
+        </section>
+
+        <ul id="myList">
+            <li data-url="https://example.com/page1">Item 1 <button class="close-btn">X</button></li>
+            <li data-url="https://example.com/page2">Item 2 <button class="close-btn">X</button></li>
+            <li data-url="https://example.com/page3">Item 3 <button class="close-btn">X</button></li>
+            <li data-url="https://example.com/page4">Item 4 <button class="close-btn">X</button></li>
+            <li data-url="https://example.com/page5">Item 5 <button class="close-btn">X</button></li>
+        </ul>
+    </main>
+</body>
+</html>
+
+<script>
+    document.querySelector("button").addEventListener("click", (event) => {
+        console.log("Button is Clicked!!!")
+    });
+
+    document.querySelector("div").addEventListener("click", (event) => {
+        
+        event.stopPropagation();
+        console.log("Div is Clicked!!!")
+    });
+
+    document.querySelector("section").addEventListener("click", () => {
+        console.log("Section is Clicked!!!")
+    });
+
+    document.querySelector("main").addEventListener("click", () => {
+        console.log("Main is Clicked!!!")
+    });
+
+
+    // List item Eg of event bubbling 
+
+    const list = document.getElementById('myList');
+
+    document.querySelectorAll("li").forEach(li => {
+
+        li.addEventListener("click", () => {
+            window.open(event.target.getAttribute('data-url'));
+        });
+
+        li.querySelector(".close-btn").addEventListener("click", (event) => {
+            event.stopPropagation();
+            event.target.parentElement.remove();
+        });
+    });
+</script>
