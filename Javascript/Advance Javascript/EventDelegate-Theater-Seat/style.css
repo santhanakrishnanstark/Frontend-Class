@@ -1,0 +1,20 @@
+.theater {
+    text-align: center;
+}
+
+.row {
+    user-select: none;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    margin: 5px 3px;
+    background-color: #ddd;
+    display: inline-block;
+    border-radius: 30px 30px 0 0;
+}
+
+.seat.selected {
+    background-color: #4CAF50;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Event Delegates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Event Delegates</h1>
+
+    <h2>Movie Theater - Seat booking</h2>
+
+    <div class="theater">
+        <p>Seat Selected: <span id="seatCount">--</span></p>
+        <div class="row">
+            <div class="seat row-1" id="seat-1"></div>
+            <div class="seat row-1" id="seat-2"></div>
+            <div class="seat row-1" id="seat-3"></div>
+            <div class="seat row-1" id="seat-4"></div>
+            <div class="seat row-1" id="seat-5"></div>
+            <div class="seat row-1" id="seat-6"></div>
+            <div class="seat row-1" id="seat-7"></div>
+            <div class="seat row-1" id="seat-8"></div>
+            <div class="seat row-1" id="seat-9"></div>
+            <div class="seat row-1" id="seat-10"></div>
+            <div class="seat row-1" id="seat-11"></div>
+            <div class="seat row-1" id="seat-12"></div>
+            <div class="seat row-1" id="seat-13"></div>
+            <div class="seat row-1" id="seat-14"></div>
+            <div class="seat row-1" id="seat-15"></div>
+        </div>
+        <div class="row">
+            <div class="seat row-2" id="seat-16"></div>
+            <div class="seat row-2" id="seat-17"></div>
+            <div class="seat row-2" id="seat-18"></div>
+            <div class="seat row-2" id="seat-19"></div>
+            <div class="seat row-2" id="seat-20"></div>
+            <div class="seat row-2" id="seat-21"></div>
+            <div class="seat row-2" id="seat-22"></div>
+            <div class="seat row-2" id="seat-23"></div>
+            <div class="seat row-2" id="seat-24"></div>
+            <div class="seat row-2" id="seat-25"></div>
+            <div class="seat row-2" id="seat-26"></div>
+            <div class="seat row-2" id="seat-27"></div>
+            <div class="seat row-2" id="seat-28"></div>
+            <div class="seat row-2" id="seat-29"></div>
+            <div class="seat row-2" id="seat-30"></div>
+        </div>
+        <div class="row">
+            <div class="seat row-3" id="seat-31"></div>
+            <div class="seat row-3" id="seat-32"></div>
+            <div class="seat row-3" id="seat-33"></div>
+            <div class="seat row-3" id="seat-34"></div>
+            <div class="seat row-3" id="seat-35"></div>
+            <div class="seat row-3" id="seat-36"></div>
+            <div class="seat row-3" id="seat-37"></div>
+            <div class="seat row-3" id="seat-38"></div>
+            <div class="seat row-3" id="seat-39"></div>
+            <div class="seat row-3" id="seat-40"></div>
+            <div class="seat row-3" id="seat-41"></div>
+            <div class="seat row-3" id="seat-42"></div>
+            <div class="seat row-3" id="seat-43"></div>
+            <div class="seat row-3" id="seat-44"></div>
+            <div class="seat row-3" id="seat-45"></div>
+        </div>
+        <div class="row">
+            <div class="seat row-4" id="seat-46"></div>
+            <div class="seat row-4" id="seat-47"></div>
+            <div class="seat row-4" id="seat-48"></div>
+            <div class="seat row-4" id="seat-49"></div>
+            <div class="seat row-4" id="seat-50"></div>
+            <div class="seat row-4" id="seat-51"></div>
+            <div class="seat row-4" id="seat-52"></div>
+            <div class="seat row-4" id="seat-53"></div>
+            <div class="seat row-4" id="seat-54"></div>
+            <div class="seat row-4" id="seat-55"></div>
+            <div class="seat row-4" id="seat-56"></div>
+            <div class="seat row-4" id="seat-57"></div>
+            <div class="seat row-4" id="seat-58"></div>
+            <div class="seat row-4" id="seat-59"></div>
+            <div class="seat row-4" id="seat-60"></div>
+        </div>
+        <div class="row">
+            <div class="seat row-5" id="seat-61"></div>
+            <div class="seat row-5" id="seat-62"></div>
+            <div class="seat row-5" id="seat-63"></div>
+            <div class="seat row-5" id="seat-64"></div>
+            <div class="seat row-5" id="seat-65"></div>
+            <div class="seat row-5" id="seat-66"></div>
+            <div class="seat row-5" id="seat-67"></div>
+            <div class="seat row-5" id="seat-68"></div>
+            <div class="seat row-5" id="seat-69"></div>
+            <div class="seat row-5" id="seat-70"></div>
+            <div class="seat row-5" id="seat-71"></div>
+            <div class="seat row-5" id="seat-72"></div>
+            <div class="seat row-5" id="seat-73"></div>
+            <div class="seat row-5" id="seat-74"></div>
+            <div class="seat row-5" id="seat-75"></div>
+        </div>
+        <div class="row">
+            <div class="seat row-6" id="seat-76"></div>
+            <div class="seat row-6" id="seat-77"></div>
+            <div class="seat row-6" id="seat-78"></div>
+            <div class="seat row-6" id="seat-79"></div>
+            <div class="seat row-6" id="seat-80"></div>
+            <div class="seat row-6" id="seat-81"></div>
+            <div class="seat row-6" id="seat-82"></div>
+            <div class="seat row-6" id="seat-83"></div>
+            <div class="seat row-6" id="seat-84"></div>
+            <div class="seat row-6" id="seat-85"></div>
+            <div class="seat row-6" id="seat-86"></div>
+            <div class="seat row-6" id="seat-87"></div>
+            <div class="seat row-6" id="seat-88"></div>
+            <div class="seat row-6" id="seat-89"></div>
+            <div class="seat row-6" id="seat-90"></div>
+        </div>
+        <div class="row">
+            <div class="seat row-7" id="seat-91"></div>
+            <div class="seat row-7" id="seat-92"></div>
+            <div class="seat row-7" id="seat-93"></div>
+            <div class="seat row-7" id="seat-94"></div>
+            <div class="seat row-7" id="seat-95"></div>
+            <div class="seat row-7" id="seat-96"></div>
+            <div class="seat row-7" id="seat-97"></div>
+            <div class="seat row-7" id="seat-98"></div>
+            <div class="seat row-7" id="seat-99"></div>
+            <div class="seat row-7" id="seat-100"></div>
+            <div class="seat row-7" id="seat-101"></div>
+            <div class="seat row-7" id="seat-102"></div>
+            <div class="seat row-7" id="seat-103"></div>
+            <div class="seat row-7" id="seat-104"></div>
+            <div class="seat row-7" id="seat-105"></div>
+        </div>
+        <div class="row">
+            <div class="seat row-8" id="seat-106"></div>
+            <div class="seat row-8" id="seat-107"></div>
+            <div class="seat row-8" id="seat-108"></div>
+            <div class="seat row-8" id="seat-109"></div>
+            <div class="seat row-8" id="seat-110"></div>
+            <div class="seat row-8" id="seat-111"></div>
+            <div class="seat row-8" id="seat-112"></div>
+            <div class="seat row-8" id="seat-113"></div>
+            <div class="seat row-8" id="seat-114"></div>
+            <div class="seat row-8" id="seat-115"></div>
+            <div class="seat row-8" id="seat-116"></div>
+            <div class="seat row-8" id="seat-117"></div>
+            <div class="seat row-8" id="seat-118"></div>
+            <div class="seat row-8" id="seat-119"></div>
+            <div class="seat row-8" id="seat-120"></div>
+        </div>
+        
+    </div>
+
+
+    <script src="eventDelegate.js"></script>
+</body>
+</html>
