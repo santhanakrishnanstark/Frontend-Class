@@ -73,6 +73,8 @@ function handleFormItem(event, type) {
     if (event.target.value && existingErrorTag) {
         if (type === "EMAIL" && isValidEmail(event.target.value)) {
             existingErrorTag.remove();
+        } else if (type === "PHONE" && isValidPhone(event.target.value)) {
+            existingErrorTag.remove();
         } else if (type !== "EMAIL") {
             existingErrorTag.remove();
         }
