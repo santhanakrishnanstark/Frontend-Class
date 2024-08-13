@@ -545,6 +545,39 @@ small {
   font-size: 80%;
 }
 
+button[class*=icon-] {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin: 5px;
+}
+
+.icon-prefix::before,
+.icon-suffix::after {
+  content: "";
+  font-weight: 900;
+  font-family: "Font Awesome 6 Free";
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+.icon-prefix.add-icon::before {
+  content: "+";
+}
+.icon-prefix.circle-check-icon::before {
+  content: "\f058";
+}
+
+.icon-suffix.add-icon::after {
+  content: "+";
+}
+.icon-suffix.circle-check-icon::after {
+  content: "\f058";
+}
+
 .button {
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;

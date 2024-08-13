@@ -1,0 +1,47 @@
+// Define Icons Variable
+
+$iconFontFamily: "Font Awesome 6 Free";
+$addIconCode: "\2b";
+$circleCheck: "\f058";
+
+
+button[class*="icon-"] {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin: 5px;
+}
+
+// Prefix Icon Button
+// Suffix Icon Button
+.icon-prefix::before,
+.icon-suffix::after {
+    content: "";
+    font-weight: 900;
+    font-family: $iconFontFamily;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+
+.icon-prefix {
+    &.add-icon::before {
+        content: $addIconCode;
+    }
+
+    &.circle-check-icon::before {
+        content: $circleCheck;
+    }
+}
+
+.icon-suffix {
+    &.add-icon::after {
+        content: $addIconCode;
+    }
+
+    &.circle-check-icon::after {
+        content: $circleCheck;
+    }
+}
