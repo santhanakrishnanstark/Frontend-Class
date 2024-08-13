@@ -1,0 +1,144 @@
+// _buttons.scss
+
+// Button Variables
+$btn-font-family: 'Roboto',
+sans-serif;
+$btn-font-size: 0.8rem;
+$btn-padding: 0.7rem 1rem;
+$btn-border-radius: 18px;
+$btn-border-width: 1px;
+$btn-border-color: #ccc;
+
+$btn-primary-bg: #6a5eff;
+$btn-primary-color: #fff;
+$btn-primary-border-color: #6a5eff;
+$btn-primary-disabled-color: #ccc;
+
+$btn-secondary-bg: #6c757d;
+$btn-secondary-color: #fff;
+$btn-secondary-border-color: #6c757d;
+
+$btn-success-bg: #28a745;
+$btn-success-color: #fff;
+$btn-success-border-color: #28a745;
+
+$btn-danger-bg: #dc3545;
+$btn-danger-color: #fff;
+$btn-danger-border-color: #dc3545;
+
+$btn-disabled-bg: #e0e0e0;
+$btn-disabled-color: #888;
+$btn-disabled-border-color: #ccc;
+
+// Base Button Styles
+.button {
+    font-family: $btn-font-family;
+    font-size: $btn-font-size;
+    padding: $btn-padding;
+    border-radius: $btn-border-radius;
+    border-width: $btn-border-width;
+    border-style: solid;
+    border-color: $btn-border-color;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    outline: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:disabled,
+    &.disabled {
+        cursor: not-allowed;
+        background-color: $btn-disabled-bg;
+        color: $btn-disabled-color;
+        border-color: $btn-disabled-border-color;
+    }
+}
+
+// Primary Button
+.button-primary {
+    background-color: $btn-primary-bg;
+    color: $btn-primary-color;
+    border-color: $btn-primary-border-color;
+
+    &:hover {
+        background-color: darken($btn-primary-bg, 10%);
+        border-color: darken($btn-primary-border-color, 10%);
+    }
+
+    &:active {
+        background-color: darken($btn-primary-bg, 15%);
+        border-color: darken($btn-primary-border-color, 15%);
+    }
+
+    &:disabled,
+    &.disabled {
+        background-color: darken($btn-primary-bg, 10%);
+        border-color: darken($btn-primary-border-color, 10%);
+        color: $btn-primary-disabled-color;
+    }
+}
+
+// Secondary Button
+.button-secondary {
+    background-color: $btn-secondary-bg;
+    color: $btn-secondary-color;
+    border-color: $btn-secondary-border-color;
+
+    &:hover {
+        background-color: darken($btn-secondary-bg, 10%);
+        border-color: darken($btn-secondary-border-color, 10%);
+    }
+
+    &:active {
+        background-color: darken($btn-secondary-bg, 15%);
+        border-color: darken($btn-secondary-border-color, 15%);
+    }
+}
+
+// Success Button
+.button-success {
+    background-color: $btn-success-bg;
+    color: $btn-success-color;
+    border-color: $btn-success-border-color;
+
+    &:hover {
+        background-color: darken($btn-success-bg, 10%);
+        border-color: darken($btn-success-border-color, 10%);
+    }
+
+    &:active {
+        background-color: darken($btn-success-bg, 15%);
+        border-color: darken($btn-success-border-color, 15%);
+    }
+}
+
+// Danger Button
+.button-danger {
+    background-color: $btn-danger-bg;
+    color: $btn-danger-color;
+    border-color: $btn-danger-border-color;
+
+    &:hover {
+        background-color: darken($btn-danger-bg, 10%);
+        border-color: darken($btn-danger-border-color, 10%);
+    }
+
+    &:active {
+        background-color: darken($btn-danger-bg, 15%);
+        border-color: darken($btn-danger-border-color, 15%);
+    }
+}
+
+// Outline Button
+.button-primary-outline {}
+
+// Prefix Icon Button
+.button-icon-prefix {}
+
+// Suffix Icon Button
+.button-icon-suffix {}

@@ -1,0 +1,129 @@
+// _typography.scss
+
+// Base Font Setup
+$font-family-base: 'Roboto',
+sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$color-text-primary: #333;
+$color-text-secondary: #777;
+
+// Heading Sizes
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.75rem;
+$font-size-h4: 1.5rem;
+$font-size-h5: 1.25rem;
+$font-size-h6: 1rem;
+
+// Body Text
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $color-text-primary;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-base;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: $font-size-h1;
+}
+
+h2 {
+    font-size: $font-size-h2;
+}
+
+h3 {
+    font-size: $font-size-h3;
+}
+
+h4 {
+    font-size: $font-size-h4;
+}
+
+h5 {
+    font-size: $font-size-h5;
+}
+
+h6 {
+    font-size: $font-size-h6;
+}
+
+// Paragraphs
+p {
+    margin-bottom: 1rem;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $color-text-secondary;
+}
+
+// Links
+a {
+    color: $color-text-primary;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Lists
+ul,
+ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+// Blockquote
+blockquote {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #f9f9f9;
+    border-left: 5px solid $color-text-secondary;
+    font-size: 1.25rem;
+    line-height: $line-height-base;
+    color: $color-text-secondary;
+}
+
+// Code
+code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    background-color: #f1f1f1;
+    padding: 0.25rem;
+    border-radius: 4px;
+}
+
+// Preformatted Text
+pre {
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    background-color: #f1f1f1;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+// Small Text
+small {
+    font-size: 80%;
+}

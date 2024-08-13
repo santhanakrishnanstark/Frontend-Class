@@ -1,0 +1,21 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "A Basic Todo Application for the Web ",
+  "main": "index.js",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded src/scss/main.scss:src/css/index.css",
+    "sass-prod": "sass --no-source-map --style=compressed src/scss/main.scss:src/css/index.css"
+  },
+  "keywords": [
+    "Todo",
+    "notes",
+    "web",
+    "todo"
+  ],
+  "author": "Sandy Krish",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.4"
+  }
+}
