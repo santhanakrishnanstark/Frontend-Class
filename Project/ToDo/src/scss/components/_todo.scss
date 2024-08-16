@@ -1,1 +1,40 @@
-.todo_item {}
+.todo-item {
+    list-style: none;
+    padding: $global_space;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    box-shadow: 0 0 4px $shadow;
+    border-radius: 20px;
+
+    .todo-check [type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-top: 13px;
+    }
+
+    .todo-content {
+        flex: 1;
+
+        .todo-title {
+            font-weight: 900;
+            font-size: $font-size-h2;
+            color: $color-text-primary;
+        }
+
+        .todo-created-date {
+            font-style: italic;
+        }
+
+        .todo-status {
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .todo-action-btn {
+            .button {
+                margin-left: auto;
+            }
+        }
+    }
+}

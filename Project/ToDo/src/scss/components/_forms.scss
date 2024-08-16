@@ -1,0 +1,61 @@
+// Search Input
+
+$field-bg-color: #f2f2f2;
+$field-text-color: #a4a7ac;
+$icon-dark: #181a1d;
+$badge-warning-bg-color: #fffadf;
+$badge-warning-text-color: #8d7919;
+
+[type="search"] {
+    appearance: none;
+    border: none;
+    background-color: $field-bg-color;
+    padding: $global_space;
+    border-radius: 30px;
+
+    &::placeholder {
+        color: $field-text-color;
+    }
+}
+
+// Form elements with icons
+
+.form-item {
+    &[class*="icon-"] {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+
+        &::before,
+        &::after {
+            position: absolute;
+            color: $icon-dark;
+        }
+
+        &::before {
+            left: $global_space;
+        }
+
+        &::after {
+            right: $global_space;
+        }
+
+        input {
+            padding-left: calc($global_space * 2.5);
+        }
+    }
+}
+
+// Badge Element
+
+.badge {
+    padding: 10px;
+    display: inline-block;
+    font-weight: 600;
+
+    &.warning {
+        background-color: $badge-warning-bg-color;
+        color: $badge-warning-text-color;
+    }
+}

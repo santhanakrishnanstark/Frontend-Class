@@ -570,11 +570,23 @@ button[class*=icon-] {
 .icon-prefix.circle-check-icon::before {
   content: "\f058";
 }
+.icon-prefix.search-icon::before {
+  content: "\f002";
+}
+.icon-prefix.mark-icon::before {
+  content: "\f058";
+}
 
 .icon-suffix.add-icon::after {
   content: "+";
 }
 .icon-suffix.circle-check-icon::after {
+  content: "\f058";
+}
+.icon-suffix.search-icon::after {
+  content: "\f002";
+}
+.icon-suffix.mark-icon::after {
   content: "\f058";
 }
 
@@ -662,6 +674,89 @@ button[class*=icon-] {
 .button-danger:active {
   background-color: #a71d2a;
   border-color: #a71d2a;
+}
+
+.button-primary-outline {
+  background-color: transparent;
+  color: #6a5eff;
+  border-color: #6a5eff;
+}
+.button-primary-outline:hover, .button-primary-outline:active {
+  color: #fff;
+}
+
+[type=search] {
+  appearance: none;
+  border: none;
+  background-color: #f2f2f2;
+  padding: 1em;
+  border-radius: 30px;
+}
+[type=search]::placeholder {
+  color: #a4a7ac;
+}
+
+.form-item[class*=icon-] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+.form-item[class*=icon-]::before, .form-item[class*=icon-]::after {
+  position: absolute;
+  color: #181a1d;
+}
+.form-item[class*=icon-]::before {
+  left: 1em;
+}
+.form-item[class*=icon-]::after {
+  right: 1em;
+}
+.form-item[class*=icon-] input {
+  padding-left: 2.5em;
+}
+
+.badge {
+  padding: 10px;
+  display: inline-block;
+  font-weight: 600;
+}
+.badge.warning {
+  background-color: #fffadf;
+  color: #8d7919;
+}
+
+.todo-item {
+  list-style: none;
+  padding: 1em;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 0 4px #ccc;
+  border-radius: 20px;
+}
+.todo-item .todo-check [type=checkbox] {
+  width: 20px;
+  height: 20px;
+  margin-top: 13px;
+}
+.todo-item .todo-content {
+  flex: 1;
+}
+.todo-item .todo-content .todo-title {
+  font-weight: 900;
+  font-size: 2rem;
+  color: #333;
+}
+.todo-item .todo-content .todo-created-date {
+  font-style: italic;
+}
+.todo-item .todo-content .todo-status {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.todo-item .todo-content .todo-action-btn .button {
+  margin-left: auto;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO - Application</title>    
     <link rel="stylesheet" href="./src/css/index.css">
+
+    <style>
+        body {
+            margin-bottom: 300px;
+        }
+    </style>
 </head>
 <body>
     <h1>Todo App
@@ -42,9 +48,14 @@
         </li>
     </ol>
 
+    <br>
+    <hr>
+    <br>
 
     <h2>Style Guide</h2>
+    <br>
     <h3>Button Component</h3>
+    <br>
 
     <button class="button">Default Button </button>
     <button class="button button-primary">Primary Button</button>
@@ -53,8 +64,34 @@
     <button class="button button-danger">Danger Button</button>
     <button class="button" disabled>Disabled Button</button>
     <button class="button button-primary" disabled>Primary Button</button>
+    <button class="button button-primary button-primary-outline">Primary Outline Button</button>
     <button class="button button-primary icon-prefix add-icon">Primary Icon Button Prefix</button>
     <button class="button button-primary icon-suffix circle-check-icon">Primary Icon Button Suffix</button>
+
+    <h3>Form Elements</h3>
+    <br>
+
+    <div class="form-item icon-prefix search-icon">
+        <input type="search" name="search" id="search" placeholder="Search">
+    </div>
+
+    <h3>Todo List Item</h3>
+    <br>
+
+    <li class="todo-item">
+        <p class="todo-check">
+            <input type="checkbox" name="todo-check" id="todo-check">
+        </p>
+        <div class="todo-content">
+            <p class="todo-title">My First Todo</p>
+            <p class="todo-created-date">Created at: 2024-10-10</p>
+            <p class="todo-status badge warning">Yet to start</p>
+            <p class="todo-action-btn">
+                <button class="button button-primary button-primary-outline icon-prefix mark-icon">Mark Complete</button>
+            </p>
+        </div>
+    </li>
+    
 
     <script src="https://kit.fontawesome.com/913972e0c8.js" crossorigin="anonymous"></script>
 

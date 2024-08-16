@@ -3,6 +3,8 @@
 $iconFontFamily: "Font Awesome 6 Free";
 $addIconCode: "\2b";
 $circleCheck: "\f058";
+$searchIcon: "\f002";
+$markIcon: "\f058";
 
 
 button[class*="icon-"] {
@@ -34,6 +36,14 @@ button[class*="icon-"] {
     &.circle-check-icon::before {
         content: $circleCheck;
     }
+
+    &.search-icon::before {
+        content: $searchIcon;
+    }
+
+    &.mark-icon::before {
+        content: $markIcon;
+    }
 }
 
 .icon-suffix {
@@ -43,5 +53,13 @@ button[class*="icon-"] {
 
     &.circle-check-icon::after {
         content: $circleCheck;
+    }
+
+    &.search-icon::after {
+        content: $searchIcon;
+    }
+
+    &.mark-icon::after {
+        content: $markIcon;
     }
 }

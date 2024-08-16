@@ -135,4 +135,13 @@ $btn-disabled-border-color: #ccc;
 }
 
 // Outline Button
-.button-primary-outline {}
+.button-primary-outline {
+    background-color: transparent;
+    color: $btn-primary-bg;
+    border-color: $btn-primary-border-color;
+
+    &:hover,
+    &:active {
+        color: $btn-primary-color;
+    }
+}
