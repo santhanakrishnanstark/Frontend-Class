@@ -1,3 +1,35 @@
+$todoTextFontSize: 26px;
+
+.todo-form {
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+
+    .form-item {
+        // margin: 0 auto;
+        // width: 50vw;
+
+        input {
+            width: 100%;
+            font-size: $todoTextFontSize;
+        }
+
+        &::before {
+            font-size: 1.5rem;
+        }
+    }
+
+    .button {
+        font-size: calc($todoTextFontSize - 50%);
+    }
+}
+
+.todo-list-container {
+    max-width: 60vw;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
 .todo-item {
     list-style: none;
     padding: $global_space;
@@ -6,6 +38,7 @@
     gap: 16px;
     box-shadow: 0 0 4px $shadow;
     border-radius: 20px;
+    margin-bottom: calc($global_space * 2);
 
     .todo-check [type="checkbox"] {
         width: 20px;
@@ -15,11 +48,32 @@
 
     .todo-content {
         flex: 1;
+        position: relative;
 
         .todo-title {
             font-weight: 900;
             font-size: $font-size-h2;
             color: $color-text-primary;
+        }
+
+        .todo-menu-btn {
+            float: right;
+            background: none;
+            border: none;
+            font-size: $font-size-base;
+        }
+
+        .todo-menu-list {
+            position: absolute;
+            right: 0;
+            padding: 0;
+            min-width: 150px;
+            top: 35px;
+
+            background: #fff;
+            padding: 10px;
+            box-shadow: 0 0 4px #ccc;
+            border-radius: 2px;
         }
 
         .todo-created-date {
@@ -32,6 +86,8 @@
         }
 
         .todo-action-btn {
+            float: right;
+
             .button {
                 margin-left: auto;
             }

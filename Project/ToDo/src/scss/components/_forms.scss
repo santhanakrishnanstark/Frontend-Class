@@ -5,8 +5,11 @@ $field-text-color: #a4a7ac;
 $icon-dark: #181a1d;
 $badge-warning-bg-color: #fffadf;
 $badge-warning-text-color: #8d7919;
+$badge-success-bg-color: #DCEDC8;
+$badge-success-text-color: #689F38;
 
-[type="search"] {
+[type="search"],
+.todo-input {
     appearance: none;
     border: none;
     background-color: $field-bg-color;
@@ -57,5 +60,10 @@ $badge-warning-text-color: #8d7919;
     &.warning {
         background-color: $badge-warning-bg-color;
         color: $badge-warning-text-color;
+    }
+
+    &.success {
+        background-color: $badge-success-bg-color;
+        color: $badge-success-text-color;
     }
 }

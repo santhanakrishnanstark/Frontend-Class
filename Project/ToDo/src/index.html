@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <h1>Todo Application</h1>
+
+    <main>
+        <div class="todo-form">
+            <div class="form-item icon-prefix search-icon">
+                <input type="text" name="todo-input" id="todoInput" class="todo-input" placeholder="Add an Item">
+            </div>
+            <button class="button button-primary icon-prefix add-icon">Create Task</button>
+        </div>
+
+        <ul class="todo-list-container">
+            <li class="todo-item">
+                <p class="todo-check">
+                    <input type="checkbox" name="todo-check" id="todo-check">
+                </p>
+                <div class="todo-content">
+                    <button class="todo-menu-btn icon-prefix dotted-menu-icon"></button>
+                    <ul class="todo-menu-list">
+                        <li>Edit</li>
+                        <li>Delete</li>
+                    </ul>
+                    <p class="todo-title">My First Todo</p>
+                    <p class="todo-created-date">Created at: 2024-10-10</p>
+                    <p class="todo-status badge warning">Yet to start</p>
+                    <p class="todo-action-btn">
+                        <button class="button button-primary button-primary-outline icon-prefix mark-icon">Mark Complete</button>
+                    </p>
+                </div>
+            </li>
+            <li class="todo-item">
+                <p class="todo-check">
+                    <input type="checkbox" name="todo-check" id="todo-check">
+                </p>
+                <div class="todo-content">
+                    <button class="todo-menu-btn icon-prefix dotted-menu-icon"></button>
+                    <p class="todo-title">My First Todo</p>
+                    <p class="todo-created-date">Created at: 2024-10-10</p>
+                    <p class="todo-status badge warning">Yet to start</p>
+                    <p class="todo-action-btn">
+                        <button class="button button-primary button-primary-outline icon-prefix mark-icon">Mark Complete</button>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <script src="https://kit.fontawesome.com/913972e0c8.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -5,6 +5,7 @@ $addIconCode: "\2b";
 $circleCheck: "\f058";
 $searchIcon: "\f002";
 $markIcon: "\f058";
+$dottedMenu: "\f142";
 
 
 button[class*="icon-"] {
@@ -44,6 +45,10 @@ button[class*="icon-"] {
     &.mark-icon::before {
         content: $markIcon;
     }
+
+    &.dotted-menu-icon::before {
+        content: $dottedMenu;
+    }
 }
 
 .icon-suffix {
@@ -61,5 +66,9 @@ button[class*="icon-"] {
 
     &.mark-icon::after {
         content: $markIcon;
+    }
+
+    &.dotted-menu-icon::before {
+        content: $dottedMenu;
     }
 }

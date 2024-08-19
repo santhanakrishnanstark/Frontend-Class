@@ -2,3 +2,14 @@
 
 $global_space: 1em;
 $shadow: #ccc;
+$bgColor: #fcfbfc;
+
+
+body {
+    background-color: $bgColor;
+    padding: $global_space;
+}
+
+main {
+    margin-top: 100px;
+}

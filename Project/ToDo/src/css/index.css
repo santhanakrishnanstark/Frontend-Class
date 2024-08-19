@@ -2,6 +2,7 @@
    v2.0-modified | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 html,
 body,
 div,
@@ -545,6 +546,15 @@ small {
   font-size: 80%;
 }
 
+body {
+  background-color: #fcfbfc;
+  padding: 1em;
+}
+
+main {
+  margin-top: 100px;
+}
+
 button[class*=icon-] {
   display: flex;
   gap: 5px;
@@ -576,6 +586,9 @@ button[class*=icon-] {
 .icon-prefix.mark-icon::before {
   content: "\f058";
 }
+.icon-prefix.dotted-menu-icon::before {
+  content: "\f142";
+}
 
 .icon-suffix.add-icon::after {
   content: "+";
@@ -588,6 +601,9 @@ button[class*=icon-] {
 }
 .icon-suffix.mark-icon::after {
   content: "\f058";
+}
+.icon-suffix.dotted-menu-icon::before {
+  content: "\f142";
 }
 
 .button {
@@ -685,14 +701,16 @@ button[class*=icon-] {
   color: #fff;
 }
 
-[type=search] {
+[type=search],
+.todo-input {
   appearance: none;
   border: none;
   background-color: #f2f2f2;
   padding: 1em;
   border-radius: 30px;
 }
-[type=search]::placeholder {
+[type=search]::placeholder,
+.todo-input::placeholder {
   color: #a4a7ac;
 }
 
@@ -725,6 +743,31 @@ button[class*=icon-] {
   background-color: #fffadf;
   color: #8d7919;
 }
+.badge.success {
+  background-color: #DCEDC8;
+  color: #689F38;
+}
+
+.todo-form {
+  display: flex;
+  justify-content: center;
+}
+.todo-form .form-item input {
+  width: 100%;
+  font-size: 26px;
+}
+.todo-form .form-item::before {
+  font-size: 1.5rem;
+}
+.todo-form .button {
+  font-size: calc(26px - 50%);
+}
+
+.todo-list-container {
+  max-width: 60vw;
+  margin: 0 auto;
+  margin-top: 100px;
+}
 
 .todo-item {
   list-style: none;
@@ -734,6 +777,7 @@ button[class*=icon-] {
   gap: 16px;
   box-shadow: 0 0 4px #ccc;
   border-radius: 20px;
+  margin-bottom: 2em;
 }
 .todo-item .todo-check [type=checkbox] {
   width: 20px;
@@ -742,11 +786,29 @@ button[class*=icon-] {
 }
 .todo-item .todo-content {
   flex: 1;
+  position: relative;
 }
 .todo-item .todo-content .todo-title {
   font-weight: 900;
   font-size: 2rem;
   color: #333;
+}
+.todo-item .todo-content .todo-menu-btn {
+  float: right;
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+.todo-item .todo-content .todo-menu-list {
+  position: absolute;
+  right: 0;
+  padding: 0;
+  min-width: 150px;
+  top: 35px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 0 4px #ccc;
+  border-radius: 2px;
 }
 .todo-item .todo-content .todo-created-date {
   font-style: italic;
@@ -754,6 +816,9 @@ button[class*=icon-] {
 .todo-item .todo-content .todo-status {
   font-size: 14px;
   text-transform: uppercase;
+}
+.todo-item .todo-content .todo-action-btn {
+  float: right;
 }
 .todo-item .todo-content .todo-action-btn .button {
   margin-left: auto;
