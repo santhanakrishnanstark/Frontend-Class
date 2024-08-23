@@ -6,6 +6,8 @@ $circleCheck: "\f058";
 $searchIcon: "\f002";
 $markIcon: "\f058";
 $dottedMenu: "\f142";
+$editIcon: "\f303";
+$deleteIcon: "\f1f8";
 
 
 button[class*="icon-"] {
@@ -49,6 +51,14 @@ button[class*="icon-"] {
     &.dotted-menu-icon::before {
         content: $dottedMenu;
     }
+
+    &.edit-icon::before {
+        content: $editIcon;
+    }
+
+    &.delete-icon::before {
+        content: $deleteIcon;
+    }
 }
 
 .icon-suffix {
@@ -68,7 +78,15 @@ button[class*="icon-"] {
         content: $markIcon;
     }
 
-    &.dotted-menu-icon::before {
+    &.dotted-menu-icon::after {
         content: $dottedMenu;
+    }
+
+    &.edit-icon::after {
+        content: $editIcon;
+    }
+
+    &.delete-icon::after {
+        content: $deleteIcon;
     }
 }

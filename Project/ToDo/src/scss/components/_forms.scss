@@ -67,3 +67,11 @@ $badge-success-text-color: #689F38;
         color: $badge-success-text-color;
     }
 }
+
+
+// Accessible Focus Ring
+
+*:focus {
+    outline: 2px dashed $btn-primary-bg;
+    outline-offset: 5px;
+}

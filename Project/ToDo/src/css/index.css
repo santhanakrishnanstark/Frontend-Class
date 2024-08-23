@@ -589,6 +589,12 @@ button[class*=icon-] {
 .icon-prefix.dotted-menu-icon::before {
   content: "\f142";
 }
+.icon-prefix.edit-icon::before {
+  content: "\f303";
+}
+.icon-prefix.delete-icon::before {
+  content: "\f1f8";
+}
 
 .icon-suffix.add-icon::after {
   content: "+";
@@ -602,8 +608,14 @@ button[class*=icon-] {
 .icon-suffix.mark-icon::after {
   content: "\f058";
 }
-.icon-suffix.dotted-menu-icon::before {
+.icon-suffix.dotted-menu-icon::after {
   content: "\f142";
+}
+.icon-suffix.edit-icon::after {
+  content: "\f303";
+}
+.icon-suffix.delete-icon::after {
+  content: "\f1f8";
 }
 
 .button {
@@ -748,6 +760,11 @@ button[class*=icon-] {
   color: #689F38;
 }
 
+*:focus {
+  outline: 2px dashed #6a5eff;
+  outline-offset: 5px;
+}
+
 .todo-form {
   display: flex;
   justify-content: center;
@@ -806,9 +823,25 @@ button[class*=icon-] {
   min-width: 150px;
   top: 35px;
   background: #fff;
-  padding: 10px;
   box-shadow: 0 0 4px #ccc;
   border-radius: 2px;
+  display: none;
+}
+.todo-item .todo-content .todo-menu-list.open {
+  display: block;
+}
+.todo-item .todo-content .todo-menu-list li {
+  margin: 0;
+}
+.todo-item .todo-content .todo-menu-list .todo-menu {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+  padding: 5px 10px;
+}
+.todo-item .todo-content .todo-menu-list .todo-menu:hover {
+  background-color: #eee;
 }
 .todo-item .todo-content .todo-created-date {
   font-style: italic;
@@ -822,6 +855,18 @@ button[class*=icon-] {
 }
 .todo-item .todo-content .todo-action-btn .button {
   margin-left: auto;
+}
+.todo-item.completed {
+  background-color: #f2f2f2;
+}
+.todo-item.completed .todo-title::after {
+  content: "";
+  width: 95%;
+  height: 2px;
+  background-color: #000;
+  display: block;
+  position: absolute;
+  top: 25px;
 }
 
 /*# sourceMappingURL=index.css.map */

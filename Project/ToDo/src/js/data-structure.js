@@ -1,11 +1,13 @@
 const todos = [{
         id: "1",
         todo: "lorem text",
+        createdAt: new Date(),
         isCompleted: false,
     },
     {
         id: "2",
         todo: "lorem text 2",
+        createdAt: new Date(),
         isCompleted: false,
     },
 ];
@@ -14,6 +16,7 @@ const todos = [{
 todos.push({
     id: "3",
     todo: "lorem text 3",
+    createdAt: new Date(),
     isCompleted: false,
 });
 
