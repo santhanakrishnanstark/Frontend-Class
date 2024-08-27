@@ -810,6 +810,9 @@ button[class*=icon-] {
   font-size: 2rem;
   color: #333;
 }
+.todo-item .todo-content .todo-title.edit-mode span {
+  display: none;
+}
 .todo-item .todo-content .todo-menu-btn {
   float: right;
   background: none;
@@ -827,7 +830,7 @@ button[class*=icon-] {
   border-radius: 2px;
   display: none;
 }
-.todo-item .todo-content .todo-menu-list.open {
+.todo-item .todo-content .todo-menu-list.show {
   display: block;
 }
 .todo-item .todo-content .todo-menu-list li {
