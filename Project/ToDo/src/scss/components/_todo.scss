@@ -91,6 +91,10 @@ $todoCompletedBgColor: #f2f2f2;
 
             li {
                 margin: 0;
+
+                a {
+                    user-select: none;
+                }
             }
 
             .todo-menu {
@@ -136,6 +140,17 @@ $todoCompletedBgColor: #f2f2f2;
                 display: block;
                 position: absolute;
                 top: 25px;
+            }
+        }
+
+        .todo-menu-list {
+
+            .edit-icon,
+            .edit-icon:hover {
+                background-color: #eee;
+                opacity: 0.5;
+                pointer-events: none;
+                user-select: none;
             }
         }
     }

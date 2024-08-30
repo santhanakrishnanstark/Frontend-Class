@@ -3,6 +3,7 @@
 // Global Variables / State
 
 let todoList = [];
+let selectedTodoItems = [];
 
 const todoInput = document.getElementById("todoInput");
 const createTaskBtn = document.getElementById("todo-button");
@@ -32,23 +33,25 @@ function todoFormEventBinding() {
 }
 
 function addTodo() {
-    const todoItem = {
-        id: todoList.length,
-        todoText: todoInput.value,
-        createdAt: new Date().toLocaleString(),
-        isCompleted: false
+    if (todoInput.value) {
+        const todoItem = {
+            id: Date.now(),
+            todoText: todoInput.value,
+            createdAt: new Date().toLocaleString(),
+            isCompleted: false
+        }
+
+        todoList.push(todoItem);
+
+        // Every time new Todo Item is added then render the Todo item UI 
+        renderTodoItem(todoItem);
+
+        // clear the Form
+        todoInput.value = "";
+
+        // Save todo into LocalStorage
+        localStorage.setItem("TODOLIST", JSON.stringify(todoList));
     }
-
-    todoList.push(todoItem);
-
-    // Every time new Todo Item is added then render the Todo item UI 
-    renderTodoItem(todoItem);
-
-    // clear the Form
-    todoInput.value = "";
-
-    // Save todo into LocalStorage
-    localStorage.setItem("TODOLIST", JSON.stringify(todoList));
 }
 
 function renderTodoItem(todoItem) {
@@ -72,14 +75,14 @@ function getTodoItemHTML(todoItem) {
         <p class="todo-check">
             ${todoItem.isCompleted
             ? `<input type="checkbox" name="todo-check" id="todo-check-${todoItem.id}" checked disabled>`
-            : `<input type="checkbox" name="todo-check" id="todo-check-${todoItem.id}">`
+            : `<input type="checkbox" name="todo-check" id="todo-check-${todoItem.id}" onchange="handleCheckbox(event, ${todoItem.id})">`
         }
         </p>
         <div class="todo-content">
             <button class="todo-menu-btn icon-prefix dotted-menu-icon" onclick="toggleMenu(event)"></button>
             <ul class="todo-menu-list">
                 <li><a href="#" class="todo-menu icon-prefix edit-icon" onclick="handleEditMode(event,  ${todoItem.id})">Edit</a></li>
-                <li><a href="#" class="todo-menu icon-prefix delete-icon" onclick="handleDelete(event)">Delete</a></li>
+                <li><a href="#" class="todo-menu icon-prefix delete-icon" onclick="handleDelete(event,  ${todoItem.id})">Delete</a></li>
             </ul>
             <p class="todo-title"><span>${todoItem.todoText}</span></p>
             <p class="todo-created-date">Created at: ${todoItem.createdAt}</p>
@@ -104,47 +107,82 @@ function toggleMenu(event) {
     }
 }
 
+function handleCheckbox(event, id) {
+    const checkboxState = event.target.checked;
+
+    const index = todoList.findIndex(item => item.id === id);
+
+    if (checkboxState) {
+        selectedTodoItems.push(todoList[index]);
+    } else {
+        const selectedItemIndex = selectedTodoItems.findIndex(item => item.id === id);
+        selectedTodoItems.splice(selectedItemIndex, 1);
+    }
+
+    console.log('**** Selected Objects: ', selectedTodoItems);
+
+    if (selectedTodoItems.length > 1) {
+        console.log('************ Show Mark All Complted Button')
+    }
+}
+
 function handleEditMode(event, id) {
     event.preventDefault();
 
     const currentItem = event.target.closest(".todo-item");
 
-    const textInput = document.createElement("input");
-    textInput.type = "text";
-    textInput.setAttribute("data-id", id);
+    if (!currentItem.classList.contains("completed")) {
+        const textInput = document.createElement("input");
+        textInput.type = "text";
+        textInput.setAttribute("data-id", id);
 
-    const currentTitleEl = currentItem.querySelector(".todo-title");
+        const currentTitleEl = currentItem.querySelector(".todo-title");
 
-    // get the previous todo title text and assign it to the text input
-    textInput.value = currentTitleEl.querySelector("span").textContent;
+        // get the previous todo title text and assign it to the text input
+        textInput.value = currentTitleEl.querySelector("span").textContent;
 
-    // Add event listener to the textInput, On enter press Update the todo Item.
-    textInput.addEventListener("keyup", (event) => {
-        if (event.code === "Enter") {
-            const updatedTitle = event.target.value;
-            const currentId = event.target.getAttribute("data-id");
+        // Add event listener to the textInput, On enter press Update the todo Item.
+        textInput.addEventListener("keyup", (event) => {
+            if (event.code === "Enter") {
+                const updatedTitle = event.target.value;
+                const currentId = event.target.getAttribute("data-id");
 
-            todoList[currentId].todoText = updatedTitle;
+                todoList[currentId].todoText = updatedTitle;
 
-            // Update the localStorage
-            localStorage.setItem("TODOLIST", JSON.stringify(todoList));
+                // Update the localStorage
+                localStorage.setItem("TODOLIST", JSON.stringify(todoList));
 
-            // Update the span tag value
-            event.target.previousElementSibling.textContent = updatedTitle;
+                // Update the span tag value
+                event.target.previousElementSibling.textContent = updatedTitle;
 
-            event.target.parentElement.classList.remove("edit-mode");
-            event.target.remove();
+                event.target.parentElement.classList.remove("edit-mode");
+                event.target.remove();
 
-        }
-    });
+            }
+        });
 
-    currentTitleEl.classList.add("edit-mode");
+        currentTitleEl.classList.add("edit-mode");
 
-    currentTitleEl.appendChild(textInput);
+        currentTitleEl.appendChild(textInput);
+    }
 
     // After rendering the text input, close the menu
-
     currentItem.querySelector(".todo-menu-list").classList.remove("show");
+
+}
+
+function handleDelete(event, id) {
+    event.preventDefault();
+
+    // Update the global TodoList by removing the current todo item
+    const index = todoList.findIndex(item => item.id === id);
+    todoList.splice(index, 1);
+
+    // Store the updated TodoList into Localstorage
+    localStorage.setItem("TODOLIST", JSON.stringify(todoList));
+
+    // remove the current deleted Todo List Item from UI
+    event.target.closest(".todo-item").remove();
 
 }
 

@@ -836,6 +836,9 @@ button[class*=icon-] {
 .todo-item .todo-content .todo-menu-list li {
   margin: 0;
 }
+.todo-item .todo-content .todo-menu-list li a {
+  user-select: none;
+}
 .todo-item .todo-content .todo-menu-list .todo-menu {
   display: flex;
   align-items: center;
@@ -870,6 +873,13 @@ button[class*=icon-] {
   display: block;
   position: absolute;
   top: 25px;
+}
+.todo-item.completed .todo-menu-list .edit-icon,
+.todo-item.completed .todo-menu-list .edit-icon:hover {
+  background-color: #eee;
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
 }
 
 /*# sourceMappingURL=index.css.map */
