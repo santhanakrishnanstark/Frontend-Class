@@ -69,6 +69,25 @@ $badge-success-text-color: #689F38;
 }
 
 
+// Mark All Btn
+
+.mark-all-btn {
+    position: fixed;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0 0 14px 10px #d7d7d7;
+
+    animation: slide 200ms linear forwards;
+}
+
+@keyframes slide {
+    to {
+        top: 30px;
+    }
+}
+
+
 // Accessible Focus Ring
 
 *:focus {
